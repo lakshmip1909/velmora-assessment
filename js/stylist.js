@@ -7,7 +7,6 @@ const shippingDays = {
 };
 
 let products = [];
-let searchNumber = 0;
 
 function addDays(date, days) {
   const result = new Date(date);
@@ -38,8 +37,7 @@ function populateOccasions() {
     products.flatMap(product => product.occasions || [])
   )].sort();
 
-  select.innerHTML =
-    '<option value="">Choose an occasion</option>';
+  select.innerHTML = '<option value="">Choose an occasion</option>';
 
   occasions.forEach(occasion => {
     const option = document.createElement("option");
@@ -144,135 +142,18 @@ function getDeliveryStatus(product, region, eventDate) {
   if (range.earliest <= deadline) {
     return {
       rank: 1,
-      message:
-        "May arrive in time, but cannot be confirmed."
+      message: "May arrive in time, but cannot be confirmed."
     };
   }
 
   return {
     rank: 2,
-    message:
-      "Unlikely to arrive before your event."
+    message: "Unlikely to arrive before your event."
   };
-}
-
-// Ask the AI to explain products already selected by our catalogue rules.
-async function addAIExplanations(matches, preferences, currentSearch) {
-  const results = document.getElementById("stylist-results");
-
-  const section = document.createElement("section");
-  section.setAttribute("aria-label", "AI styling insights");
-
-  const heading = document.createElement("h3");
-  heading.textContent = "AI Styling Insights";
-
-  const status = document.createElement("p");
-  status.textContent = "Preparing AI styling insights...";
-
-  section.append(heading, status);
-  results.appendChild(section);
-
-  const selectedProducts = matches.slice(0, 3).map(product => {
-    const deliveryStatus = preferences.eventDate
-      ? getDeliveryStatus(
-          product,
-          preferences.region,
-          preferences.eventDate
-        )
-      : null;
-
-    return {
-      id: product.id,
-      name: product.name,
-      price_gbp: product.price_gbp,
-      fabric: product.fabric,
-      fit: product.fit,
-      delivery_status: deliveryStatus
-        ? deliveryStatus.message
-        : ""
-    };
-  });
-
-  try {
-    const response = await fetch(
-      "/.netlify/functions/stylist-ai",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          occasion: preferences.occasion,
-          budget: preferences.budget,
-          size: preferences.size,
-          products: selectedProducts
-        })
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error("AI unavailable");
-    }
-
-    const data = await response.json();
-
-    if (!Array.isArray(data.explanations)) {
-      throw new Error("Invalid AI response");
-    }
-
-    // Ignore an old AI response if the user has searched again.
-    if (currentSearch !== searchNumber) return;
-
-    const explanationList = document.createElement("div");
-
-    data.explanations.forEach(item => {
-      const product = selectedProducts.find(
-        product => product.id === item.id
-      );
-
-      if (!product || typeof item.text !== "string") return;
-
-      const paragraph = document.createElement("p");
-      const strong = document.createElement("strong");
-
-      strong.textContent =
-        `${product.name} (${product.id}): `;
-
-      paragraph.appendChild(strong);
-      paragraph.appendChild(
-        document.createTextNode(item.text)
-      );
-
-      explanationList.appendChild(paragraph);
-    });
-
-    if (!explanationList.children.length) {
-      throw new Error("No valid explanations");
-    }
-
-    status.replaceWith(explanationList);
-
-    const disclaimer = document.createElement("p");
-    disclaimer.textContent =
-      "AI-generated explanations are supplementary. " +
-      "Product facts and delivery estimates above take priority.";
-
-    section.appendChild(disclaimer);
-
-  } catch (error) {
-    if (currentSearch !== searchNumber) return;
-
-    status.textContent =
-      "AI styling insights are currently unavailable. " +
-      "The catalogue recommendations above remain available.";
-  }
 }
 
 function findProducts(event) {
   event.preventDefault();
-
-  searchNumber += 1;
-  const currentSearch = searchNumber;
 
   const occasion =
     document.getElementById("occasion-input").value;
@@ -382,6 +263,8 @@ function findProducts(event) {
     );
   });
 
+  // Prioritise delivery suitability when an event date is supplied.
+  // Otherwise sort by price.
   matches.sort((a, b) => {
     if (eventDate && region) {
       const aStatus = getDeliveryStatus(a, region, eventDate);
@@ -536,14 +419,6 @@ function findProducts(event) {
 
     results.appendChild(card);
   });
-
-  addAIExplanations(matches, {
-    occasion,
-    budget,
-    size,
-    region,
-    eventDate
-  }, currentSearch);
 }
 
 document.getElementById("stylist-form")
