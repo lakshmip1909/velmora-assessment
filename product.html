@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Vela Dress | Velmora</title>
+  <title>Vela Dress | Made-to-Order Evening Wear | Velmora</title>
   <meta name="description"
-    content="Explore the Vela dress by Velmora. Made-to-order eveningwear with clear sizing and delivery estimates.">
+    content="Discover the Vela dress by Velmora. Draped crepe evening wear, made to order in London. Explore colours, UK sizes and estimated delivery.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,30 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Structured product information for search and AI discovery -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Vela dress",
+    "sku": "VLM-008",
+    "description": "Made-to-order draped crepe dress for gala events and winter weddings.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Velmora"
+    },
+    "material": "Crepe",
+    "color": ["Ivory", "Oxblood"],
+    "size": ["UK 6", "UK 8", "UK 10", "UK 12", "UK 14", "UK 16", "UK 18"],
+    "offers": {
+      "@type": "Offer",
+      "price": "350",
+      "priceCurrency": "GBP",
+      "url": "https://velmora-assessment.netlify.app/product.html"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -45,59 +69,95 @@
       <!-- PRODUCT GALLERY -->
 
       <div class="product-gallery">
-        <div class="product-main-image">
-          <span>Illustrative product image placeholder</span>
+
+        <div class="product-main-image"
+             role="img"
+             aria-label="Illustrative colour study for the Vela dress">
         </div>
 
         <div class="product-small-images">
-          <div>Front view placeholder</div>
-          <div>Detail view placeholder</div>
+          <div role="img" aria-label="Illustrative neutral colour study"></div>
+          <div role="img" aria-label="Illustrative oxblood colour study"></div>
         </div>
 
         <p class="product-image-note">
-          Images are placeholders, not photographs of the actual piece.
+          Illustrative colour studies only. Actual product
+          photography is not available in this demonstration.
         </p>
+
       </div>
 
       <!-- PRODUCT INFORMATION -->
 
       <div class="product-information">
 
-        <p class="eyebrow">THE VELMORA COLLECTION</p>
+        <p class="eyebrow">THE VELMORA COLLECTION · VLM-008</p>
 
         <h1 id="product-name">Vela dress</h1>
 
         <p id="product-price" class="product-price">£350</p>
 
-        <!-- DELIVERY INFORMATION DIRECTLY UNDER PRICE -->
+        <!-- VISIBLE WITHOUT JAVASCRIPT -->
 
         <div class="product-delivery-summary">
           <p class="delivery-heading">Made to order</p>
+
           <p id="delivery-summary">
-            Loading production and delivery information...
+            14 days production, followed by 3–5 days
+            shipping to the UK. Allow approximately
+            17–19 calendar days in total.
+            Delivery dates are estimates, not guarantees.
           </p>
         </div>
 
         <p id="product-description" class="product-description">
-          Loading product details...
+          A draped crepe dress for gala evenings and winter weddings.
+          Available in ivory and oxblood.
         </p>
 
         <div class="product-facts">
-          <p><strong>Fabric:</strong> <span id="product-fabric">—</span></p>
-          <p><strong>Fit:</strong> <span id="product-fit">—</span></p>
-          <p><strong>Occasions:</strong> <span id="product-occasions">—</span></p>
+          <p>
+            <strong>Fabric:</strong>
+            <span id="product-fabric">Crepe</span>
+          </p>
+
+          <p>
+            <strong>Fit:</strong>
+            <span id="product-fit">Draped</span>
+          </p>
+
+          <p>
+            <strong>Occasions:</strong>
+            <span id="product-occasions">Gala, Winter Wedding</span>
+          </p>
+
+          <p>
+            <strong>Sizes:</strong>
+            UK 6–18
+          </p>
         </div>
+
+        <!-- PRODUCT SELECTION -->
 
         <form id="product-form">
 
           <label for="product-colour">Colour</label>
           <select id="product-colour" required>
             <option value="">Choose a colour</option>
+            <option value="ivory">Ivory</option>
+            <option value="oxblood">Oxblood</option>
           </select>
 
           <label for="product-size">UK size</label>
           <select id="product-size" required>
             <option value="">Choose a size</option>
+            <option value="UK 6">UK 6</option>
+            <option value="UK 8">UK 8</option>
+            <option value="UK 10">UK 10</option>
+            <option value="UK 12">UK 12</option>
+            <option value="UK 14">UK 14</option>
+            <option value="UK 16">UK 16</option>
+            <option value="UK 18">UK 18</option>
           </select>
 
           <label for="product-region">Delivery destination</label>
@@ -106,35 +166,43 @@
             <option value="EU">European Union</option>
           </select>
 
-          <label for="product-event-date">Your event date (optional)</label>
+          <label for="product-event-date">
+            Your event date (optional)
+          </label>
           <input id="product-event-date" type="date">
 
           <div id="product-delivery-result" aria-live="polite"></div>
 
-          <button class="primary-button product-add-button" type="submit">
+          <button class="primary-button product-add-button"
+                  type="submit">
             Add to Bag
           </button>
 
         </form>
 
-        <p id="product-message" class="product-message" aria-live="polite"></p>
+        <p id="product-message"
+           class="product-message"
+           aria-live="polite"></p>
 
         <p class="product-demo-note">
           Demonstration only. No payment or order is processed.
         </p>
 
+        <!-- DELIVERY AND RETURNS -->
+
         <div class="product-policy">
-          <h2>Delivery & returns</h2>
+
+          <h2>Delivery &amp; returns</h2>
 
           <p>
-            Made-to-order pieces begin production after an order
-            is placed. Production and shipping times are estimates,
-            not guaranteed arrival dates.
+            This piece is made to order, with a 14-day
+            production lead time. No ready-made stock is held.
           </p>
 
           <p>
-            UK shipping usually takes 3–5 days after production.
-            EU shipping usually takes 5–8 days after production.
+            Following production, UK shipping usually takes
+            3–5 days and EU shipping usually takes 5–8 days.
+            Arrival dates are indicative, not guaranteed.
           </p>
 
           <p>
@@ -151,18 +219,23 @@
             colours beyond those listed in the catalogue.
             There are no customer reviews yet.
           </p>
+
         </div>
 
       </div>
     </section>
 
+    <!-- OTHER PRODUCTS -->
+
     <section class="product-bottom-section">
       <p class="eyebrow">DISCOVER MORE</p>
       <h2>Still deciding?</h2>
+
       <p>
         Tell us about your occasion and explore other pieces
         from the Velmora collection.
       </p>
+
       <a href="index.html#stylist" class="primary-button">
         Find Your Piece
       </a>
@@ -172,19 +245,31 @@
 
   <footer class="site-footer">
     <h2>VELMORA</h2>
-    <p>Eveningwear, made to order in London.</p>
+
+    <p>Evening wear, made to order in London.</p>
+
+    <p>
+      <a href="index.html#about">Our process</a>
+      · Delivery and returns information above
+    </p>
+
     <p class="footer-note">
       Concept website created for the GIS Analytics assessment.
+      Illustrative visuals are not actual product photographs.
     </p>
   </footer>
 
+  <!-- MOBILE STICKY CTA -->
+
   <div class="mobile-product-bar">
     <span id="mobile-product-price">£350</span>
+
     <a href="#product-form" class="primary-button">
       Select Your Size
     </a>
   </div>
 
+  <!-- KEEP EXISTING PRODUCT FUNCTIONALITY -->
   <script src="js/product.js"></script>
 
 </body>

@@ -6,12 +6,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Velmora | Eveningwear Made to Order</title>
+  <title>Velmora | Made-to-Order Evening Wear in London</title>
 
   <meta name="description"
-    content="Discover eveningwear made to order in London. Find a piece for your occasion.">
+    content="Explore made-to-order evening wear for winter weddings, black-tie events and New Year's Eve. Discover fabrics, fit and delivery estimates.">
 
-  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -19,9 +18,17 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
 
-  <!-- WEBSITE STYLING -->
   <link rel="stylesheet" href="css/styles.css">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Velmora",
+    "url": "https://velmora-assessment.netlify.app/",
+    "description": "London-based made-to-order evening wear."
+  }
+  </script>
 </head>
 
 <body>
@@ -46,26 +53,23 @@
 
   </header>
 
-
   <main>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
 
     <section class="hero">
 
       <div class="hero-content">
 
-        <p class="eyebrow">
-          MADE TO ORDER IN LONDON
-        </p>
+        <p class="eyebrow">MADE TO ORDER IN LONDON</p>
 
-        <h1>
-          Made for the evening ahead.
-        </h1>
+        <h1>Made for the evening ahead.</h1>
 
         <p class="hero-description">
-          Considered eveningwear for winter weddings,
-          celebrations and the moments worth dressing for.
+          Considered evening wear for winter weddings,
+          black-tie dinners and New Year's Eve.
+          Explore the collection with clarity on fit,
+          fabric and delivery.
         </p>
 
         <a href="#stylist" class="primary-button">
@@ -78,18 +82,12 @@
 
         <div class="image-placeholder"
              role="img"
-             aria-label="Placeholder for an editorial fashion photograph">
-
-          <span>
-            Editorial image coming soon
-          </span>
-
+             aria-label="Abstract neutral-toned editorial colour study">
         </div>
 
       </div>
 
     </section>
-
 
     <!-- SHOP BY OCCASION -->
 
@@ -97,20 +95,15 @@
 
       <div class="section-heading">
 
-        <p class="eyebrow">
-          THE COLLECTION
-        </p>
+        <p class="eyebrow">THE COLLECTION</p>
 
-        <h2>
-          Shop by occasion
-        </h2>
+        <h2>Shop by occasion</h2>
 
         <p>
           Find a piece that feels right for where you're going.
         </p>
 
       </div>
-
 
       <div class="occasion-grid">
 
@@ -120,15 +113,12 @@
            class="occasion-card"
            data-occasion="winter wedding">
 
-          <div class="occasion-image"
-               aria-hidden="true"></div>
+          <div class="occasion-image" aria-hidden="true"></div>
 
           <h3>Winter Weddings</h3>
-
           <span>Explore pieces</span>
 
         </a>
-
 
         <!-- BLACK TIE -->
 
@@ -136,35 +126,35 @@
            class="occasion-card"
            data-occasion="black tie">
 
-          <div class="occasion-image"
-               aria-hidden="true"></div>
+          <div class="occasion-image" aria-hidden="true"></div>
 
           <h3>Black Tie</h3>
-
           <span>Explore pieces</span>
 
         </a>
 
-
-        <!-- CELEBRATIONS -->
+        <!-- NEW YEAR'S EVE -->
 
         <a href="#stylist"
            class="occasion-card"
-           data-occasion="celebration">
+           data-occasion="new year's eve">
 
-          <div class="occasion-image"
-               aria-hidden="true"></div>
+          <div class="occasion-image" aria-hidden="true"></div>
 
-          <h3>Celebrations</h3>
-
+          <h3>New Year's Eve</h3>
           <span>Explore pieces</span>
 
         </a>
 
       </div>
 
-    </section>
+      <p style="text-align:center; margin-top:28px;">
+        <a href="winter-wedding.html">
+          Explore the winter wedding collection
+        </a>
+      </p>
 
+    </section>
 
     <!-- FEATURED VELA DRESS -->
 
@@ -174,7 +164,7 @@
       <div class="featured-product-link">
 
         <p class="eyebrow">
-          FEATURED PIECE
+          FEATURED PIECE · VLM-008
         </p>
 
         <h2 id="featured-title">
@@ -182,12 +172,26 @@
         </h2>
 
         <p>
-          Draped crepe eveningwear, made to order.
-          Available in ivory and oxblood.
+          A draped crepe dress for gala evenings
+          and winter weddings. Available in ivory
+          and oxblood, UK sizes 6–18.
+        </p>
+
+        <p>
+          <strong>Fabric:</strong> Crepe
+          &nbsp;·&nbsp;
+          <strong>Fit:</strong> Draped
         </p>
 
         <p class="featured-price">
           <strong>£350</strong>
+        </p>
+
+        <p>
+          Made to order: 14 days production,
+          followed by 3–5 days UK shipping.
+          Allow approximately 17–19 days in total.
+          Delivery is estimated, not guaranteed.
         </p>
 
         <a href="product.html" class="primary-button">
@@ -197,7 +201,6 @@
       </div>
 
     </section>
-
 
     <!-- PERSONAL STYLIST -->
 
@@ -209,38 +212,45 @@
           A MORE PERSONAL WAY TO SHOP
         </p>
 
-        <h2>
-          Find Your Piece
-        </h2>
+        <h2>Find Your Piece</h2>
 
         <p>
-          Tell us about your occasion, your preferences
+          Tell us about your occasion, preferences
           and when you need your piece.
-          We'll help you explore suitable options
-          from the Velmora collection.
+          Explore suitable options from the real
+          Velmora collection.
         </p>
 
-
-        <!-- STYLIST FORM -->
-
         <form id="stylist-form" class="stylist-form">
-
-          <!-- OCCASION -->
 
           <label for="occasion-input">
             Your occasion
           </label>
 
           <select id="occasion-input" required>
-
-            <option value="">
-              Choose an occasion
-            </option>
-
+            <option value="">Choose an occasion</option>
           </select>
 
+          <label for="category-input">
+            Category (optional)
+          </label>
 
-          <!-- BUDGET -->
+          <select id="category-input">
+            <option value="">Any clothing category</option>
+            <option value="dress">Dress</option>
+            <option value="jumpsuit">Jumpsuit</option>
+            <option value="top">Top</option>
+            <option value="skirt">Skirt</option>
+            <option value="outerwear">Outerwear</option>
+          </select>
+
+          <label for="fit-input">
+            Preferred fit (optional)
+          </label>
+
+          <select id="fit-input">
+            <option value="">Any fit</option>
+          </select>
 
           <label for="budget-input">
             Maximum budget (£)
@@ -250,11 +260,7 @@
             id="budget-input"
             type="number"
             min="1"
-            placeholder="e.g. 350"
-          >
-
-
-          <!-- SIZE -->
+            placeholder="e.g. 350">
 
           <label for="size-input">
             UK size
@@ -262,10 +268,7 @@
 
           <select id="size-input">
 
-            <option value="">
-              Any size
-            </option>
-
+            <option value="">Any size</option>
             <option value="UK 6">UK 6</option>
             <option value="UK 8">UK 8</option>
             <option value="UK 10">UK 10</option>
@@ -276,80 +279,42 @@
 
           </select>
 
-
-          <!-- DELIVERY DESTINATION -->
-
           <label for="region-input">
             Delivery destination
           </label>
 
           <select id="region-input">
 
-            <option value="">
-              Choose destination
-            </option>
-
-            <option value="UK">
-              United Kingdom
-            </option>
-
-            <option value="EU">
-              European Union
-            </option>
+            <option value="">Choose destination</option>
+            <option value="UK">United Kingdom</option>
+            <option value="EU">European Union</option>
 
           </select>
-
-
-          <!-- EVENT DATE -->
 
           <label for="date-input">
             Event date (optional)
           </label>
 
-          <input
-            id="date-input"
-            type="date"
-          >
+          <input id="date-input" type="date">
 
-
-          <!-- SUBMIT BUTTON -->
-
-          <button
-            type="submit"
-            class="primary-button">
-
+          <button type="submit" class="primary-button">
             Find My Piece
-
           </button>
 
         </form>
 
-
-        <!-- RECOMMENDATION RESULTS -->
-
-        <div
-          id="stylist-results"
-          aria-live="polite">
-
-        </div>
-
-
-        <!-- TRANSPARENCY -->
+        <div id="stylist-results" aria-live="polite"></div>
 
         <p class="stylist-disclaimer">
-
           Recommendations use Velmora's listed products.
           Delivery dates are estimates, not guarantees.
-
           We cannot confirm alterations, unlisted colours
           or sizes, and there are no customer reviews yet.
-
         </p>
 
       </div>
 
     </section>
-
 
     <!-- MADE TO ORDER -->
 
@@ -361,60 +326,45 @@
           THE VELMORA APPROACH
         </p>
 
-        <h2>
-          Made with intention
-        </h2>
+        <h2>Made with intention</h2>
 
       </div>
 
-
       <div class="process-grid">
 
-        <!-- STEP ONE -->
-
         <div>
 
-          <h3>
-            01. Choose your piece
-          </h3>
+          <h3>01. Choose your piece</h3>
 
           <p>
-            Explore our collection and select the colour
-            and size that work for you.
+            Explore the collection and select
+            the colour and size that work for you.
           </p>
 
         </div>
 
-
-        <!-- STEP TWO -->
-
         <div>
 
-          <h3>
-            02. Made to order
-          </h3>
+          <h3>02. Made to order</h3>
 
           <p>
-            Most pieces are made in our London studio,
-            with a production lead time of 14–21 days.
+            Most pieces are made to order,
+            with production lead times typically
+            ranging from 14–21 days.
+            Check individual product details.
           </p>
 
         </div>
 
-
-        <!-- STEP THREE -->
-
         <div>
 
-          <h3>
-            03. Delivered to you
-          </h3>
+          <h3>03. Delivered to you</h3>
 
           <p>
-            After production, UK shipping takes 3–5 days
-            and EU shipping takes 5–8 days.
-
-            Delivery dates are estimates.
+            After production, UK shipping takes
+            approximately 3–5 days and EU shipping
+            approximately 5–8 days.
+            Delivery dates are not guaranteed.
           </p>
 
         </div>
@@ -423,31 +373,144 @@
 
     </section>
 
-  </main>
+    <!-- BLACK FRIDAY -->
 
+    <section id="black-friday"
+             class="featured-product-section"
+             aria-labelledby="black-friday-title">
+
+      <div class="featured-product-link">
+
+        <p class="eyebrow">PLAN AHEAD</p>
+
+        <h2 id="black-friday-title">
+          Ahead of Black Friday
+        </h2>
+
+        <p>
+          Planning for a winter occasion?
+          Made-to-order production takes time.
+          Check the estimated arrival date
+          before choosing your piece.
+        </p>
+
+        <p>
+          Black Friday is 27 November 2026.
+          There is no confirmed order-by deadline
+          or promotion in the supplied information.
+        </p>
+
+        <form id="bf-signup-form">
+
+          <label for="bf-email">
+            Email address
+          </label>
+
+          <input
+            id="bf-email"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required>
+
+          <button type="submit" class="primary-button">
+            Register Interest
+          </button>
+
+        </form>
+
+        <p id="bf-signup-message" aria-live="polite"></p>
+
+        <p class="footer-note">
+          Demonstration only. Email addresses are not
+          stored or sent, and no mailing-list subscription
+          is created.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
 
   <footer class="site-footer">
 
-    <h2>
-      VELMORA
-    </h2>
+    <h2>VELMORA</h2>
+
+    <p>Evening wear, made to order in London.</p>
 
     <p>
-      Eveningwear, made to order in London.
+      <a href="product.html">Vela dress</a>
+      ·
+      <a href="winter-wedding.html">Winter weddings</a>
+      ·
+      <a href="#about">Delivery information</a>
+    </p>
+
+    <p>
+      Returns: Eligible unworn items with tags may
+      be returned within 14 days.
+      Made-to-order non-standard sizes are non-returnable.
     </p>
 
     <p class="footer-note">
-      Concept website created for the GIS Analytics assessment.
+      Concept website for the GIS Analytics assessment.
+      Visuals are illustrative tonal blocks,
+      not product photography.
+      No external images are used.
     </p>
 
   </footer>
 
-
-  <!-- PERSONAL STYLIST JAVASCRIPT -->
+  <!-- STYLIST JAVASCRIPT -->
 
   <script src="js/stylist.js"></script>
+
+  <!-- OCCASION SELECTION AND DEMO SIGNUP -->
+
+  <script>
+    // Automatically select the occasion when a card is clicked.
+    document.querySelectorAll(".occasion-card").forEach(card => {
+
+      card.addEventListener("click", () => {
+
+        const occasion = card.dataset.occasion;
+
+        const select =
+          document.getElementById("occasion-input");
+
+        if (!select) return;
+
+        const matchingOption = Array.from(select.options).find(
+          option =>
+            option.value.toLowerCase() === occasion.toLowerCase()
+        );
+
+        if (matchingOption) {
+          select.value = matchingOption.value;
+          select.dispatchEvent(
+            new Event("change", { bubbles: true })
+          );
+        }
+
+      });
+
+    });
+
+    // Demo only: no email is saved or transmitted.
+    document.getElementById("bf-signup-form")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        document.getElementById("bf-signup-message").textContent =
+          "Thank you for your interest. This is a demonstration; " +
+          "your email has not been collected or subscribed.";
+
+      });
+  </script>
 
 </body>
 </html>

@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Winter Wedding Collection | Velmora</title>
+
+  <meta name="description"
+    content="Explore Velmora's winter wedding collection. Compare made-to-order evening wear by fabric, fit, price and estimated delivery.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .collection-intro {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 80px 24px 45px;
+    }
+
+    .collection-intro h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 7vw, 82px);
+      font-weight: 500;
+      line-height: 1.05;
+      margin: 18px 0;
+    }
+
+    .collection-intro p {
+      max-width: 650px;
+      line-height: 1.7;
+    }
+
+    .collection-grid {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 24px 90px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .collection-card {
+      min-width: 0;
+    }
+
+    .collection-visual {
+      height: 270px;
+      background: linear-gradient(
+        145deg,
+        #cfc6ba,
+        #e8ded3 55%,
+        #b7a89c
+      );
+      margin-bottom: 20px;
+    }
+
+    .collection-card:nth-child(3n+2) .collection-visual {
+      background: linear-gradient(
+        145deg,
+        #6b1f2a,
+        #a0757a,
+        #d7c4bd
+      );
+    }
+
+    .collection-card:nth-child(3n+3) .collection-visual {
+      background: linear-gradient(
+        145deg,
+        #4d4441,
+        #978b82,
+        #d5cbc1
+      );
+    }
+
+    .collection-card h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      font-weight: 500;
+      margin: 0 0 8px;
+    }
+
+    .collection-card p {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+
+    .collection-sku {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+    }
+
+    .collection-price {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .collection-link {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: underline;
+    }
+
+    .collection-note {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 24px 55px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 850px) {
+      .collection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 540px) {
+      .collection-intro {
+        padding-top: 55px;
+      }
+
+      .collection-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .collection-visual {
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="brand-logo">
+        VELMORA
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html#occasions">Occasions</a>
+        <a href="index.html#stylist">Find Your Piece</a>
+        <a href="index.html#about">Our Process</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="collection-intro">
+
+      <p class="eyebrow">THE OCCASION EDIT</p>
+
+      <h1>Winter Weddings</h1>
+
+      <p>
+        Considered pieces for winter ceremonies
+        and evening celebrations.
+        Explore fabrics, silhouettes and made-to-order
+        lead times before choosing your look.
+      </p>
+
+      <p>
+        Most made-to-order pieces require 14–21 days
+        of production. UK delivery generally adds
+        3–5 days and EU delivery 5–8 days.
+        Individual products may differ.
+      </p>
+
+      <a href="index.html#stylist" class="primary-button">
+        Find Your Piece
+      </a>
+
+    </section>
+
+    <section aria-label="Winter wedding products">
+
+      <div class="collection-intro"
+           style="padding-top: 20px; padding-bottom: 0;">
+
+        <p class="eyebrow">EXPLORE THE COLLECTION</p>
+
+        <h2>Pieces for the occasion</h2>
+
+        <p id="collection-count" aria-live="polite">
+          Loading collection...
+        </p>
+
+      </div>
+
+      <div id="collection-grid" class="collection-grid">
+      </div>
+
+    </section>
+
+    <section class="collection-note">
+
+      <h2>Before you order</h2>
+
+      <p>
+        All delivery windows are estimates, not guarantees.
+        Production time is additional to shipping time.
+        For an upcoming event, use Find Your Piece
+        to compare estimated delivery dates.
+      </p>
+
+      <p>
+        Eligible unworn items with tags may be returned
+        within 14 days. Made-to-order non-standard sizes
+        are non-returnable.
+      </p>
+
+      <p>
+        The colour blocks on this page are illustrative,
+        not photographs of the listed garments.
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <h2>VELMORA</h2>
+
+    <p>Evening wear, made to order in London.</p>
+
+    <p>
+      <a href="index.html">Home</a>
+      ·
+      <a href="index.html#stylist">Find Your Piece</a>
+      ·
+      <a href="product.html">The Vela dress</a>
+    </p>
+
+    <p class="footer-note">
+      Concept website for the GIS Analytics assessment.
+      Catalogue details are sourced from the supplied dataset.
+    </p>
+
+  </footer>
+
+  <script>
+    const collectionGrid =
+      document.getElementById("collection-grid");
+
+    const collectionCount =
+      document.getElementById("collection-count");
+
+    function addDetail(card, label, value) {
+      if (value === undefined ||
+          value === null ||
+          value === "") {
+        return;
+      }
+
+      const paragraph = document.createElement("p");
+      const strong = document.createElement("strong");
+
+      strong.textContent = label + ": ";
+      paragraph.appendChild(strong);
+      paragraph.appendChild(
+        document.createTextNode(String(value))
+      );
+
+      card.appendChild(paragraph);
+    }
+
+    async function loadWinterWeddingCollection() {
+      try {
+        const response = await fetch("data/products.json");
+
+        if (!response.ok) {
+          throw new Error("Catalogue unavailable");
+        }
+
+        const products = await response.json();
+
+        if (!Array.isArray(products)) {
+          throw new Error("Invalid catalogue");
+        }
+
+        const matches = products.filter(product =>
+          Array.isArray(product.occasions) &&
+          product.occasions.some(occasion =>
+            String(occasion).trim().toLowerCase() ===
+            "winter wedding"
+          ) &&
+          product.category !== "accessory"
+        );
+
+        matches.sort((a, b) =>
+          Number(a.price_gbp) - Number(b.price_gbp)
+        );
+
+        collectionCount.textContent =
+          `${matches.length} catalogue ` +
+          `piece${matches.length === 1 ? "" : "s"} ` +
+          `listed for winter weddings.`;
+
+        if (!matches.length) {
+          collectionCount.textContent =
+            "No winter wedding products are currently " +
+            "listed in the supplied catalogue.";
+          return;
+        }
+
+        matches.forEach(product => {
+          const card = document.createElement("article");
+          card.className = "collection-card";
+
+          const visual = document.createElement("div");
+          visual.className = "collection-visual";
+          visual.setAttribute("aria-hidden", "true");
+
+          const sku = document.createElement("p");
+          sku.className = "collection-sku";
+          sku.textContent = product.id || "SKU unavailable";
+
+          const name = document.createElement("h2");
+          name.textContent = product.name || "Unnamed piece";
+
+          const price = document.createElement("p");
+          price.className = "collection-price";
+
+          price.textContent =
+            Number.isFinite(Number(product.price_gbp)) &&
+            product.price_gbp !== null &&
+            product.price_gbp !== ""
+              ? `£${product.price_gbp}`
+              : "Price unavailable";
+
+          card.append(visual, sku, name, price);
+
+          addDetail(card, "Category", product.category);
+          addDetail(card, "Fabric", product.fabric);
+          addDetail(card, "Fit", product.fit);
+
+          if (Array.isArray(product.sizes)) {
+            addDetail(
+              card,
+              "Sizes",
+              product.sizes.join(", ")
+            );
+          }
+
+          if (
+            product.lead_time_days !== undefined &&
+            product.lead_time_days !== null &&
+            product.lead_time_days !== ""
+          ) {
+            addDetail(
+              card,
+              "Production",
+              `${product.lead_time_days} days`
+            );
+          }
+
+          if (product.id === "VLM-008") {
+            const link = document.createElement("a");
+            link.href = "product.html";
+            link.className = "collection-link";
+            link.textContent = "View product details";
+            card.appendChild(link);
+          }
+
+          collectionGrid.appendChild(card);
+        });
+
+      } catch (error) {
+        collectionCount.textContent =
+          "The collection could not be loaded. " +
+          "Please try again later.";
+      }
+    }
+
+    loadWinterWeddingCollection();
+  </script>
+
+</body>
+</html>
