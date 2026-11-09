@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Velmora | Eveningwear Made to Order</title>
+
+  <meta name="description"
+    content="Discover eveningwear made to order in London. Find a piece for your occasion.">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- WEBSITE STYLING -->
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <a href="index.html" class="brand-logo">
+        VELMORA
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#occasions">Occasions</a>
+        <a href="#stylist">Find Your Piece</a>
+        <a href="#about">Our Process</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          MADE TO ORDER IN LONDON
+        </p>
+
+        <h1>
+          Made for the evening ahead.
+        </h1>
+
+        <p class="hero-description">
+          Considered eveningwear for winter weddings,
+          celebrations and the moments worth dressing for.
+        </p>
+
+        <a href="#stylist" class="primary-button">
+          Find Your Piece
+        </a>
+
+      </div>
+
+      <div class="hero-image">
+
+        <div class="image-placeholder"
+             role="img"
+             aria-label="Placeholder for an editorial fashion photograph">
+
+          <span>
+            Editorial image coming soon
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SHOP BY OCCASION -->
+
+    <section class="occasions-section" id="occasions">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          THE COLLECTION
+        </p>
+
+        <h2>
+          Shop by occasion
+        </h2>
+
+        <p>
+          Find a piece that feels right for where you're going.
+        </p>
+
+      </div>
+
+
+      <div class="occasion-grid">
+
+        <!-- WINTER WEDDINGS -->
+
+        <a href="#stylist"
+           class="occasion-card"
+           data-occasion="winter wedding">
+
+          <div class="occasion-image"
+               aria-hidden="true"></div>
+
+          <h3>Winter Weddings</h3>
+
+          <span>Explore pieces</span>
+
+        </a>
+
+
+        <!-- BLACK TIE -->
+
+        <a href="#stylist"
+           class="occasion-card"
+           data-occasion="black tie">
+
+          <div class="occasion-image"
+               aria-hidden="true"></div>
+
+          <h3>Black Tie</h3>
+
+          <span>Explore pieces</span>
+
+        </a>
+
+
+        <!-- CELEBRATIONS -->
+
+        <a href="#stylist"
+           class="occasion-card"
+           data-occasion="celebration">
+
+          <div class="occasion-image"
+               aria-hidden="true"></div>
+
+          <h3>Celebrations</h3>
+
+          <span>Explore pieces</span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURED VELA DRESS -->
+
+    <section class="featured-product-section"
+             aria-labelledby="featured-title">
+
+      <div class="featured-product-link">
+
+        <p class="eyebrow">
+          FEATURED PIECE
+        </p>
+
+        <h2 id="featured-title">
+          The Vela dress
+        </h2>
+
+        <p>
+          Draped crepe eveningwear, made to order.
+          Available in ivory and oxblood.
+        </p>
+
+        <p class="featured-price">
+          <strong>£350</strong>
+        </p>
+
+        <a href="product.html" class="primary-button">
+          Discover the Vela dress
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- PERSONAL STYLIST -->
+
+    <section class="stylist-section" id="stylist">
+
+      <div class="stylist-inner">
+
+        <p class="eyebrow">
+          A MORE PERSONAL WAY TO SHOP
+        </p>
+
+        <h2>
+          Find Your Piece
+        </h2>
+
+        <p>
+          Tell us about your occasion, your preferences
+          and when you need your piece.
+          We'll help you explore suitable options
+          from the Velmora collection.
+        </p>
+
+
+        <!-- STYLIST FORM -->
+
+        <form id="stylist-form" class="stylist-form">
+
+          <!-- OCCASION -->
+
+          <label for="occasion-input">
+            Your occasion
+          </label>
+
+          <select id="occasion-input" required>
+
+            <option value="">
+              Choose an occasion
+            </option>
+
+          </select>
+
+
+          <!-- BUDGET -->
+
+          <label for="budget-input">
+            Maximum budget (£)
+          </label>
+
+          <input
+            id="budget-input"
+            type="number"
+            min="1"
+            placeholder="e.g. 350"
+          >
+
+
+          <!-- SIZE -->
+
+          <label for="size-input">
+            UK size
+          </label>
+
+          <select id="size-input">
+
+            <option value="">
+              Any size
+            </option>
+
+            <option value="UK 6">UK 6</option>
+            <option value="UK 8">UK 8</option>
+            <option value="UK 10">UK 10</option>
+            <option value="UK 12">UK 12</option>
+            <option value="UK 14">UK 14</option>
+            <option value="UK 16">UK 16</option>
+            <option value="UK 18">UK 18</option>
+
+          </select>
+
+
+          <!-- DELIVERY DESTINATION -->
+
+          <label for="region-input">
+            Delivery destination
+          </label>
+
+          <select id="region-input">
+
+            <option value="">
+              Choose destination
+            </option>
+
+            <option value="UK">
+              United Kingdom
+            </option>
+
+            <option value="EU">
+              European Union
+            </option>
+
+          </select>
+
+
+          <!-- EVENT DATE -->
+
+          <label for="date-input">
+            Event date (optional)
+          </label>
+
+          <input
+            id="date-input"
+            type="date"
+          >
+
+
+          <!-- SUBMIT BUTTON -->
+
+          <button
+            type="submit"
+            class="primary-button">
+
+            Find My Piece
+
+          </button>
+
+        </form>
+
+
+        <!-- RECOMMENDATION RESULTS -->
+
+        <div
+          id="stylist-results"
+          aria-live="polite">
+
+        </div>
+
+
+        <!-- TRANSPARENCY -->
+
+        <p class="stylist-disclaimer">
+
+          Recommendations use Velmora's listed products.
+          Delivery dates are estimates, not guarantees.
+
+          We cannot confirm alterations, unlisted colours
+          or sizes, and there are no customer reviews yet.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- MADE TO ORDER -->
+
+    <section class="process-section" id="about">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          THE VELMORA APPROACH
+        </p>
+
+        <h2>
+          Made with intention
+        </h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <!-- STEP ONE -->
+
+        <div>
+
+          <h3>
+            01. Choose your piece
+          </h3>
+
+          <p>
+            Explore our collection and select the colour
+            and size that work for you.
+          </p>
+
+        </div>
+
+
+        <!-- STEP TWO -->
+
+        <div>
+
+          <h3>
+            02. Made to order
+          </h3>
+
+          <p>
+            Most pieces are made in our London studio,
+            with a production lead time of 14–21 days.
+          </p>
+
+        </div>
+
+
+        <!-- STEP THREE -->
+
+        <div>
+
+          <h3>
+            03. Delivered to you
+          </h3>
+
+          <p>
+            After production, UK shipping takes 3–5 days
+            and EU shipping takes 5–8 days.
+
+            Delivery dates are estimates.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <h2>
+      VELMORA
+    </h2>
+
+    <p>
+      Eveningwear, made to order in London.
+    </p>
+
+    <p class="footer-note">
+      Concept website created for the GIS Analytics assessment.
+    </p>
+
+  </footer>
+
+
+  <!-- PERSONAL STYLIST JAVASCRIPT -->
+
+  <script src="js/stylist.js"></script>
+
+</body>
+</html>

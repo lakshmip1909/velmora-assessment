@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vela Dress | Velmora</title>
+  <meta name="description"
+    content="Explore the Vela dress by Velmora. Made-to-order eveningwear with clear sizing and delivery estimates.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo">VELMORA</a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html#occasions">Occasions</a>
+        <a href="index.html#stylist">Find Your Piece</a>
+        <a href="index.html#about">Our Process</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="product-breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true"> / </span>
+      <span>Vela dress</span>
+    </div>
+
+    <section class="product-layout">
+
+      <!-- PRODUCT GALLERY -->
+
+      <div class="product-gallery">
+        <div class="product-main-image">
+          <span>Illustrative product image placeholder</span>
+        </div>
+
+        <div class="product-small-images">
+          <div>Front view placeholder</div>
+          <div>Detail view placeholder</div>
+        </div>
+
+        <p class="product-image-note">
+          Images are placeholders, not photographs of the actual piece.
+        </p>
+      </div>
+
+      <!-- PRODUCT INFORMATION -->
+
+      <div class="product-information">
+
+        <p class="eyebrow">THE VELMORA COLLECTION</p>
+
+        <h1 id="product-name">Vela dress</h1>
+
+        <p id="product-price" class="product-price">£350</p>
+
+        <!-- DELIVERY INFORMATION DIRECTLY UNDER PRICE -->
+
+        <div class="product-delivery-summary">
+          <p class="delivery-heading">Made to order</p>
+          <p id="delivery-summary">
+            Loading production and delivery information...
+          </p>
+        </div>
+
+        <p id="product-description" class="product-description">
+          Loading product details...
+        </p>
+
+        <div class="product-facts">
+          <p><strong>Fabric:</strong> <span id="product-fabric">—</span></p>
+          <p><strong>Fit:</strong> <span id="product-fit">—</span></p>
+          <p><strong>Occasions:</strong> <span id="product-occasions">—</span></p>
+        </div>
+
+        <form id="product-form">
+
+          <label for="product-colour">Colour</label>
+          <select id="product-colour" required>
+            <option value="">Choose a colour</option>
+          </select>
+
+          <label for="product-size">UK size</label>
+          <select id="product-size" required>
+            <option value="">Choose a size</option>
+          </select>
+
+          <label for="product-region">Delivery destination</label>
+          <select id="product-region" required>
+            <option value="UK">United Kingdom</option>
+            <option value="EU">European Union</option>
+          </select>
+
+          <label for="product-event-date">Your event date (optional)</label>
+          <input id="product-event-date" type="date">
+
+          <div id="product-delivery-result" aria-live="polite"></div>
+
+          <button class="primary-button product-add-button" type="submit">
+            Add to Bag
+          </button>
+
+        </form>
+
+        <p id="product-message" class="product-message" aria-live="polite"></p>
+
+        <p class="product-demo-note">
+          Demonstration only. No payment or order is processed.
+        </p>
+
+        <div class="product-policy">
+          <h2>Delivery & returns</h2>
+
+          <p>
+            Made-to-order pieces begin production after an order
+            is placed. Production and shipping times are estimates,
+            not guaranteed arrival dates.
+          </p>
+
+          <p>
+            UK shipping usually takes 3–5 days after production.
+            EU shipping usually takes 5–8 days after production.
+          </p>
+
+          <p>
+            Returns are accepted within 14 days for eligible
+            unworn items with tags. Made-to-order pieces in
+            non-standard sizes are non-returnable.
+            Confirm eligibility before purchasing.
+          </p>
+
+          <h2>What we cannot confirm</h2>
+
+          <p>
+            We cannot confirm alterations, custom sizing or
+            colours beyond those listed in the catalogue.
+            There are no customer reviews yet.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="product-bottom-section">
+      <p class="eyebrow">DISCOVER MORE</p>
+      <h2>Still deciding?</h2>
+      <p>
+        Tell us about your occasion and explore other pieces
+        from the Velmora collection.
+      </p>
+      <a href="index.html#stylist" class="primary-button">
+        Find Your Piece
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <h2>VELMORA</h2>
+    <p>Eveningwear, made to order in London.</p>
+    <p class="footer-note">
+      Concept website created for the GIS Analytics assessment.
+    </p>
+  </footer>
+
+  <div class="mobile-product-bar">
+    <span id="mobile-product-price">£350</span>
+    <a href="#product-form" class="primary-button">
+      Select Your Size
+    </a>
+  </div>
+
+  <script src="js/product.js"></script>
+
+</body>
+</html>
