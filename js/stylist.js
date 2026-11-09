@@ -152,7 +152,7 @@ function getDeliveryStatus(product, region, eventDate) {
   };
 }
 
-function findProducts(event) {
+async function findProducts(event) {
   event.preventDefault();
 
   const occasion =
@@ -219,6 +219,7 @@ function findProducts(event) {
     }
   }
 
+  // Filter using real catalogue facts.
   const matches = products.filter(product => {
     const occasionMatch = (product.occasions || [])
       .some(item => normalise(item) === normalise(occasion));
@@ -263,8 +264,7 @@ function findProducts(event) {
     );
   });
 
-  // Prioritise delivery suitability when an event date is supplied.
-  // Otherwise sort by price.
+  // Default ranking: delivery suitability first, then price.
   matches.sort((a, b) => {
     if (eventDate && region) {
       const aStatus = getDeliveryStatus(a, region, eventDate);
@@ -297,8 +297,68 @@ function findProducts(event) {
     return;
   }
 
+  // AI ranks only products already validated against the catalogue.
+  // If AI fails, preserve the original deterministic ranking.
+  let rankedMatches = matches;
+  let aiUsed = false;
+
+  if (matches.length > 1) {
+    results.textContent =
+      "Finding suitable pieces. The AI model may take a moment to load...";
+
+    try {
+      const { rankWithAI } = await import("./stylist-ai.js");
+
+      const aiRanking = await rankWithAI(matches, {
+        occasion,
+        category,
+        fit
+      });
+
+      if (eventDate && region) {
+        // Delivery suitability always takes priority over AI ranking.
+        const aiPosition = new Map(
+          aiRanking.map((product, index) => [product.id, index])
+        );
+
+        rankedMatches = [...aiRanking].sort((a, b) => {
+          const aStatus = getDeliveryStatus(a, region, eventDate);
+          const bStatus = getDeliveryStatus(b, region, eventDate);
+
+          return aStatus.rank - bStatus.rank ||
+            aiPosition.get(a.id) - aiPosition.get(b.id);
+        });
+      } else {
+        rankedMatches = aiRanking;
+      }
+
+      aiUsed = true;
+
+    } catch (error) {
+      console.warn(
+        "AI unavailable; using catalogue ranking.",
+        error
+      );
+
+      rankedMatches = matches;
+    }
+  }
+
+  results.replaceChildren();
+
+  const aiNote = document.createElement("p");
+
+  aiNote.textContent = aiUsed
+    ? "AI-assisted ranking: a language model compares your preferences " +
+      "with real catalogue descriptions. Product details and delivery " +
+      "estimates are checked against the catalogue."
+    : "Catalogue-based recommendations. AI ranking is unavailable " +
+      "or unnecessary for this selection.";
+
+  results.appendChild(aiNote);
+
   if (eventDate && region) {
-    const onTimeCount = matches.filter(product =>
+    const onTimeCount = rankedMatches.filter(product =>
       getDeliveryStatus(product, region, eventDate).rank === 0
     ).length;
 
@@ -319,11 +379,11 @@ function findProducts(event) {
 
   introduction.textContent =
     `Showing up to 3 pieces from the Velmora catalogue ` +
-    `(${matches.length} match${matches.length === 1 ? "" : "es"} found).`;
+    `(${rankedMatches.length} match${rankedMatches.length === 1 ? "" : "es"} found).`;
 
   results.appendChild(introduction);
 
-  matches.slice(0, 3).forEach(product => {
+  rankedMatches.slice(0, 3).forEach(product => {
     const card = document.createElement("article");
     card.className = "stylist-product";
 
